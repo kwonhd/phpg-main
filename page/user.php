@@ -1,12 +1,6 @@
 <?php
-print_r($POST);
-print_r($_GET);
-    $title=array('User','사용자');
-    include('./module/header.php');
-    include('./module/mysql.php');
-    $qry='select id,name,uid,upw,uemail,status from users where id=1';
-    $user=getData($qry);
-    //print_r($user);
+    $do=$_GET['do'];
+    $id=$_GET['id'];
     $udata=array(
         array('id','번호','hidden'),
         array('name','이름','txt'),
@@ -15,8 +9,27 @@ print_r($_GET);
         array('uemail','이메일','txt'),
         array('status','상태','txt'),
     );
+    $user=array();//유저 초기화
+    if($do=='edit'){//수정하기 위해 get 정보 들어옴
+        $title=array('User Edit','사용자 수정');
+        include('./module/mysql.php');
+        $qry='select id,name,uid,upw,uemail,status from users where id='.$id;
+        $users=getData($qry);
+        $user=$users[0];
+
+    }else{//추가하기 위해 get 정보 들어옴
+        $title=array('User Add','사용자 추가');
+        foreach($udata as $u){
+            $user[$u[0]]='';
+        }
+    }
+    include('./module/header.php');
+    //print_r($user);
+
 ?>
-<form action="/page/users.php?do=edit" method="POST">
+
+
+<form action="/page/users.php?do=<?=$do?>" method="POST">
     <?php foreach ($udata as $u) {
         $txt = '<div class="form-group row">';
         if ($u[2] != 'hidden') {
@@ -29,5 +42,6 @@ print_r($_GET);
             </div>';
         print($txt);
     } ?>
+
   <button type="submit" class="btn btn-default">Submit</button>
 </form>

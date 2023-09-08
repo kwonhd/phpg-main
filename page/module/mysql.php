@@ -13,10 +13,19 @@ function getConn(){
     mysqli_query($conn,'SET NAMES utf8');
     return $conn;
 }
-function getData($qry='select * from users'){
+function getData($qry='select * from users',$type='1'){
     $conn=getConn();
     $res=mysqli_query($conn,$qry);
-    $data=mysqli_fetch_assoc($res);// 연관배열로
-    return $data;
+    $resArr=array(); //데이터 초기화
+    if($type==1){
+        //묵시적 불린 T/F 0==F 0>T
+        while($data=mysqli_fetch_assoc($res)){ //조건이 참인동안 반복
+            array_push($resArr,$data);
+        }// 연관배열로
+        
+    }else{
+        $resArr=$res;
+    }
+    return $resArr;
 }
 ?>
