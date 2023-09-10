@@ -27,7 +27,7 @@
             <li role="separator" class="divider"></li>
             <li><a href="#">장바구니</a></li>
             <li role="separator" class="divider"></li>
-            <li><a href="#">아이템</a></li>
+            <li><a href="/page/item.php">아이템</a></li>
           </ul>
         </li>
       </ul>
