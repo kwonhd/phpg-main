@@ -61,34 +61,56 @@
                 </div>
             </nav>
 
-            <!-- Add a title -->
-            <div class="page-title">
-                <h1>식자재 마트</h1>
-            </div>
+<!-- Page Title -->
+<div class="container">
+    <div class="page-title">
+        <h1>식자재 마트</h1>
+    </div>
+</div>
 
-
-            <!-- figure 요소를 navbar 밖으로 이동 -->
-            <div class="figure">
-                <div class="image-container">
-                    <a href="/page/meat.php"> <!-- Link to the new "meat.html" page -->
-                        <img src="/assets/img/feature-1.jpg" class="figure-img img-fluid rounded" alt="Image 1">
-                        <figcaption class="figure-caption">Meat</figcaption>
-                    </a>
-                </div>
-                <div class="image-container">
-                    <img src="/assets/img/feature-2.jpg" class="figure-img img-fluid rounded" alt="Image 2">
-                    <figcaption class="figure-caption">바나나</figcaption>
-                </div>
-                <div class="image-container">
-                    <img src="/assets/img/feature-3.jpg" class="figure-img img-fluid rounded" alt="Image 3">
-                    <figcaption class="figure-caption">자몽</figcaption>
+<!-- Product Section -->
+<div class="container">
+    <div class="row">
+        <div class="col-md-4">
+            <div class="thumbnail">
+                <img src="/assets/img/feature-1.jpg" alt="Meat">
+                <div class="caption">
+                    <h3>고기</h3>
+                    <p>신선한 고기를 즐겨보세요.</p>
+                    <p><a href="/page/meat.php" class="btn btn-primary" role="button">상품 보기</a></p>
                 </div>
             </div>
+        </div>
+        <div class="col-md-4">
+            <div class="thumbnail">
+                <img src="/assets/img/feature-2.jpg" alt="바나나">
+                <div class="caption">
+                    <h3>바나나</h3>
+                    <p>달콤한 바나나를 만나보세요.</p>
+                    <p><a href="/page/banana.php" class="btn btn-primary" role="button">상품 보기</a></p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="thumbnail">
+                <img src="/assets/img/feature-3.jpg" alt="자몽">
+                <div class="caption">
+                    <h3>자몽</h3>
+                    <p>시원한 자몽을 즐겨보세요.</p>
+                    <p><a href="/page/grapefruit.php" class="btn btn-primary" role="button">상품 보기</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
+<!-- Add your JavaScript files and any additional sections or features here -->
 
+<!-- Bootstrap JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+</body>
+</html>
 
-
-        </body>
 
 
 
